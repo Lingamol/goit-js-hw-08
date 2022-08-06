@@ -23,7 +23,6 @@ function onInputForm(event) {
 function onSubmitForm(event) {
   event.preventDefault();
   event.currentTarget.reset();
-  // refs.formText.textContent = '';
   localStorage.removeItem(LOCALSTORAGE_KEY);
   console.log(formData);
 }
@@ -32,6 +31,6 @@ function loadFormData() {
   if (localFormData) {
     refs.formText.textContent = localFormData.message || '';
     refs.inputEmail.value = localFormData.email || '';
-    console.log('load', localFormData);
+    // console.log('load', localFormData);
   }
 }
