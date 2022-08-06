@@ -23,7 +23,7 @@ function onInputForm(event) {
 function onSubmitForm(event) {
   event.preventDefault();
   event.currentTarget.reset();
-  refs.formText.textContent = '';
+  // refs.formText.textContent = '';
   localStorage.removeItem(LOCALSTORAGE_KEY);
   console.log(formData);
 }
