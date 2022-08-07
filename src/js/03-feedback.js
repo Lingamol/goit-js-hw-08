@@ -17,7 +17,7 @@ loadFormData();
 function onInputForm(event) {
   formData[event.target.name] = event.target.value;
   save(LOCALSTORAGE_KEY, formData);
-  console.log('input', formData);
+  // console.log('input', formData);
 }
 
 function onSubmitForm(event) {
