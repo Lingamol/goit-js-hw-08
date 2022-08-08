@@ -15,9 +15,14 @@ refs.form.addEventListener('input', throttle(onInputForm, 500));
 loadFormData();
 
 function onInputForm(event) {
+  const localFormData = load(LOCALSTORAGE_KEY);
   formData[event.target.name] = event.target.value;
-  save(LOCALSTORAGE_KEY, formData);
-  // console.log('input', formData);
+  if (localFormData) {
+    const changedFormData = { ...localFormData, ...formData };
+    save(LOCALSTORAGE_KEY, changedFormData);
+  } else {
+    save(LOCALSTORAGE_KEY, formData);
+  }
 }
 
 function onSubmitForm(event) {
